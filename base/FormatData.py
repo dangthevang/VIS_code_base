@@ -5,6 +5,7 @@ class Data():
   def __init__(self,data_read):
     self.data_read = data_read.sort_values(by=["TIME"]).reset_index(drop = True)
 
+
   def GetField(self):
     return self.data_read.columns.copy()
 
@@ -29,7 +30,7 @@ class Data():
     data_ETL.insert(loc=0, column='TIME', value=self.data_read['TIME'])
     data_ETL.insert(loc=1, column='SYMBOL', value=self.data_read['SYMBOL'])
     return data_ETL
-  def ExportDataForArray(self,):
+  def ExportDataForArray(self):
     data = self.SetupData()
     A = np.array(data['MARKET CAPITALIZATION'])
     B = np.array(data['EARNINGS'])
@@ -42,7 +43,8 @@ class Data():
     I = np.array(data['DEBTS'])
     profit = np.array(data['PROFIT'])
     return A,B,C,D,E,F,G,H,I,profit
-
+  def GetData(self):
+    return self.data_read
 
 class DataYear(Data):
   pass
