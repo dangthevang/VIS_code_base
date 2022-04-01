@@ -38,7 +38,7 @@ class Data():
     D = np.array(data['SALES'])
     E = np.array(data['CASH'])
     F = np.array(data['INVESTMENTS'])
-    G = np.array(data['RECEIVABLES']),
+    G = np.array(data['RECEIVABLES'])
     H = np.array(data['INVENTORY'])
     I = np.array(data['DEBTS'])
     profit = np.array(data['PROFIT'])
